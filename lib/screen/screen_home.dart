@@ -52,7 +52,9 @@ class _HomeScreenState extends State<HomeScreen> {
       );
     }
 
-    return SafeArea(
+    return WillPopScope(
+      onWillPop: () async => false,
+    child: SafeArea(
       child: Scaffold(
         appBar: AppBar(
           title: Text('My Quiz App'),
@@ -120,6 +122,6 @@ class _HomeScreenState extends State<HomeScreen> {
           ],
         ),
       ),
-    );
+    ));
   }
 }
